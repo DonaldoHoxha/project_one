@@ -31,6 +31,8 @@ session_start();
                 <p class="appointment-stylist">con X X</p>
             </div>
         </div>
+        <button class="button">REGISTRATI</button>
+        <button class="button">ACCEDI</button>
         <div class="services-section">
             <h2>Servizi più richiesti</h2>
             <div class="service-card">

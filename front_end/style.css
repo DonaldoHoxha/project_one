@@ -12,8 +12,8 @@
 
 [data-theme="dark"] {
     --text-color: #ffffff;
-    --background-color: #141313;
-    --primary-color: rgb(21, 40, 143);
+    --background-color: #121212;
+    --primary-color: rgb(255, 255, 255);
     --secondary-color: #ff4081;
     --card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.3);
@@ -77,7 +77,7 @@ header {
     margin: 30px auto;
     padding: 15px;
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 25px;
     font-size: 16px;
@@ -92,6 +92,57 @@ header {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.button {
+    min-width: 120px;
+
+    position: relative;
+    cursor: pointer;
+
+    padding: 12px 17px;
+    border: 0;
+    border-radius: 7px;
+
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: radial-gradient(
+    ellipse at bottom,
+    rgba(71, 81, 92, 1) 0%,
+    rgba(11, 21, 30, 1) 45%
+    );
+
+    color: rgb(255, 255, 255, 0.66);
+
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.2;
+    transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button:hover {
+    color: rgb(255, 255, 255, 1);
+    transform: scale(1.1) translateY(-3px);
+}
+
+.button:hover::before {
+    opacity: 1;
 }
 
 .services-section,
