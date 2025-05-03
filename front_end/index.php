@@ -21,9 +21,27 @@ session_start();
         </header>
         <div class="welcome-message">
             <h1>Benvenuto su AmiManera</h1>
+            <br>
+            <h1>Benvenuto
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo $_SESSION['username'];
+                } else {
+                    echo "su AmiMansera";
+                }
+
+                ?>
+            </h1>
             <p>La migliore app per prenotare il tuo prossimo haircut</p>
         </div>
-        <a href="#" class="cta-button">PRENOTA ORA</a>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo "<a href='' class='cta-button'>PRENOTA ORA</a>";
+        } else {
+            echo "<a href='registration/registration.html'><button class='button'>REGISTRATI</button></a>";
+        }
+        ?>
+
         <div class="recent-appointments">
             <h2>I tuoi prossimi appuntamenti</h2>
             <div class="appointment-card">
@@ -32,8 +50,14 @@ session_start();
                 <p class="appointment-stylist">con X X</p>
             </div>
         </div>
-        <a href="registration/registration.html"><button class="button">REGISTRATI</button></a>
-        <a href="login/login.html"><button class="button">ACCEDI</button></a>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo "<a href='../back_end/logout/logout.php'><button class='button'>LOGOUT</button></a>";
+        } else {
+            echo "<a href='registration/registration.html'><button class='button'>REGISTRATI</button></a>";
+            echo "<a href='login/login.html'><button class='button'>ACCEDI</button></a>";
+        }
+        ?>
         <div class="services-section">
             <h2>Servizi più richiesti</h2>
             <div class="service-card">
