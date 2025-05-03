@@ -1,0 +1,328 @@
+/* Stili base */
+:root {
+    --primary-color: #4a6cf7;
+    --primary-hover: #3c5ce4;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --light-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --radius: 0.5rem;
+}
+
+/* Dark mode variables */
+.dark-mode {
+    --primary-color: #5e7eff;
+    --primary-hover: #4a6cf7;
+    --secondary-color: #adb5bd;
+    --light-bg: #2d3748;
+    --border-color: #4a5568;
+    --text-color: #f8f9fa;
+    --text-muted: #cbd5e0;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    transition: var(--transition);
+    padding-bottom: 70px; /* Spazio per la navbar */
+}
+
+.dark-mode {
+    background-color: #1a202c;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header stili */
+.settings-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.settings-header h1 i {
+    margin-right: 10px;
+}
+
+/* Alert stili */
+.alert {
+    padding: 16px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.dark-mode .alert-success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.4);
+}
+
+/* Panel stili */
+.settings-panel {
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.dark-mode .settings-panel {
+    background-color: #2d3748;
+}
+
+/* Sezioni */
+.settings-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section:last-child {
+    border-bottom: none;
+}
+
+.settings-section h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.settings-section h2 i {
+    margin-right: 10px;
+}
+
+/* Elementi impostazioni */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-label {
+    flex: 1;
+}
+
+.setting-label label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.setting-description {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.setting-control {
+    margin-left: 20px;
+}
+
+.setting-info {
+    width: 100%;
+}
+
+.setting-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.setting-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.setting-info a:hover {
+    text-decoration: underline;
+}
+
+/* Toggle switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: var(--transition);
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: var(--primary-color);
+}
+
+input:focus + .toggle-slider {
+    box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* Select input */
+.select-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: white;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path fill="%236c757d" d="M12 0L6 6 0 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    transition: var(--transition);
+}
+
+.dark-mode .select-input {
+    background-color: #4a5568;
+    border-color: #4a5568;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.2);
+}
+
+/* Bottoni */
+.settings-actions {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .setting-control {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .settings-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+}
