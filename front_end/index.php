@@ -51,7 +51,7 @@ session_start();
         if (isset($_SESSION['username'])) {
             echo "<a href='../back_end/logout/logout.php'><button class='button'>LOGOUT</button></a>";
         } else {
-            echo "<a href='registration/registration.html'><button class='button'>REGISTRATI</button></a>";
+            echo "<a href='login/registration.html'><button class='button'>REGISTRATI</button></a>";
             echo "<a href='login/login.html'><button class='button'>ACCEDI</button></a>";
         }
         ?>
