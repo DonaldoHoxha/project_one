@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Registrazione</title>
 </head>
 
@@ -13,5 +14,13 @@
         <input type="text" id="username" name="username" required><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
+        <div class="remember">
+            <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">remember me</label>
+            </div>
+            <a href="#" class="forgot_psw"><span>forgot password?</span></a>
+        </div>
+        <input type="submit" value="Login">
         <input type="submit" value="Accedi">
 </body>
