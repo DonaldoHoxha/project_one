@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../back_end/db_conn.php");
+include_once "../../back_end/db_conn.php";
 
 // Gestione degli errori
 $error = '';
@@ -25,14 +25,14 @@ if (isset($_GET['error'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione</title>
-    <link rel="stylesheet" href="../stylee.css">
+    <link rel="stylesheet" href="stylee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
         <div class="form-container sign-up-container">
-            <form action="../back_end/process_registration.php" method="POST">
+            <form action="../../back_end/register/process_registration.php" method="POST">
                 <h1>Crea Account</h1>
                 <?php if ($error): ?>
                     <div class="error-message"><?php echo $error; ?></div>
