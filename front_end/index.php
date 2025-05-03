@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="it">
 <?php include 'barra-navigazione.php'; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,8 +32,8 @@ session_start();
                 <p class="appointment-stylist">con X X</p>
             </div>
         </div>
-        <button class="button">REGISTRATI</button>
-        <button class="button">ACCEDI</button>
+        <a href="registration/registration.html"><button class="button">REGISTRATI</button></a>
+        <a href="login/login.html"><button class="button">ACCEDI</button></a>
         <div class="services-section">
             <h2>Servizi più richiesti</h2>
             <div class="service-card">
