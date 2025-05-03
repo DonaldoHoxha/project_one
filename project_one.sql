@@ -29,10 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barbiere` (
   `id` int(10) NOT NULL,
-  `name` int(100) NOT NULL,
-  `password` int(100) NOT NULL,
-  `email` int(100) NOT NULL
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `barbiere`
+--
+
+INSERT INTO barbiere (id, name, password, email) VALUES
+(1, 'blabla', '202cb962ac59075b964b07152d234b70', 'blabla@gmail.com'),
+(2, 'blablabla', '202cb962ac59075b964b07152d234b70', 'blablabla@gmail.com'),
+(4, 'blablablabla', '202cb962ac59075b964b07152d234b70', 'blablablabla@gmail.com');
 
 -- --------------------------------------------------------
 
