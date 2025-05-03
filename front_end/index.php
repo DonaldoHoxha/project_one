@@ -20,8 +20,6 @@ session_start();
             <button class="theme-toggle" id="themeToggle">🌓</button>
         </header>
         <div class="welcome-message">
-            <h1>Benvenuto su AmiManera</h1>
-            <br>
             <h1>Benvenuto
                 <?php
                 if (isset($_SESSION['username'])) {
