@@ -27,7 +27,6 @@ session_start();
                 } else {
                     echo "su AmiMansera";
                 }
-
                 ?>
             </h1>
             <p>La migliore app per prenotare il tuo prossimo haircut</p>
