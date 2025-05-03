@@ -1,20 +1,23 @@
 :root {
-    --text-color: #000000;
+    --text-color: #2d3436;
     --background-color: #ffffff;
-    --primary-color: rgb(0, 0, 0);
-    --secondary-color: #ff0000;
-    --card-bg: #fcfcfc;
-    --shadow-color: rgba(212, 9, 9, 0.1);
+    --primary-color: #4a90e2;
+    --secondary-color: #ffffff;
+    --card-bg: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #dee2e6;
 }
 
 [data-theme="dark"] {
-    --text-color: #000000;
+    --text-color: #dfe6e9;
     --background-color: #121212;
-    --primary-color: rgb(255, 255, 255);
-    --secondary-color: #ff0000;
-    --card-bg: #ffffff;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-color: #6fa8dc;
+    --secondary-color: #2d3436;
+    --card-bg: #1e1e1e;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --border-color: #2d2d2d;
 }
+
 
 * {
     margin: 0;
@@ -23,9 +26,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 body {
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--primary-color);
     transition: all 0.4s ease;
     padding-bottom: 85px;
     
@@ -35,6 +39,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    --text-color: rgb(255, 255, 255); 
 }
 
 header {
@@ -46,9 +51,8 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: rgb(rgb(223, 159, 159), green, blue)    ;
+    color: var(--primary-color);
 }
-
 .theme-toggle {
     position: absolute;
     right: 10px;
@@ -71,7 +75,7 @@ header {
     margin: 30px auto;
     padding: 15px;
     background-color: var(--primary-color);
-    color: var(--background-color);
+    color: var(--secondary-color);
     border: none;
     border-radius: 25px;
     font-size: 16px;
@@ -84,7 +88,7 @@ header {
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
+    transform: scale(1.1) translateY(-3px);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
@@ -146,10 +150,9 @@ header {
 
 h2 {
     border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
+
 
 .service-card,
 .promo-card {
@@ -180,7 +183,20 @@ h2 {
     font-size: 0.9em;
     color: var(--secondary-color);
     font-style: italic;
+}.service-card h3,
+.promo-card h3 {
+    color: var(--primary-color);
 }
+
+.service-price,
+.promo-expiry {
+    color: var(--text-color);
+}
+
+.appointment-date {
+    color: var(--primary-color);
+}
+
 
     .footer-navbar {
         position: fixed;
