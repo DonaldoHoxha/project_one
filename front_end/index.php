@@ -33,7 +33,7 @@ session_start();
         </div>
         <?php
         if (isset($_SESSION['username'])) {
-            echo "<a href='prenota.php' class='cta-button'>PRENOTA ORA</a>";
+            echo "<a href='mostra_personale.php' class='cta-button'>PRENOTA ORA</a>";
         } else {
             echo "<a href='login/login.html' class='cta-button'>PRENOTA ORA</a>";
         }
