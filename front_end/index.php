@@ -3,226 +3,26 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeautyStyle - Prenotazioni</title>
-    <style>
-        :root {
-            --text-color: #333;
-            --background-color: #f5f5f5;
-            --primary-color: #3f51b5;
-            --secondary-color: #f50057;
-            --card-bg: #ffffff;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --navbar-bg: #ffffff;
-            --navbar-active: #3f51b5;
-            --navbar-inactive: #757575;
-        }
-
-        [data-theme="dark"] {
-            --text-color: #f5f5f5;
-            --background-color: #121212;
-            --primary-color: #5c6bc0;
-            --secondary-color: #ff4081;
-            --card-bg: #1e1e1e;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            --navbar-bg: #1e1e1e;
-            --navbar-active: #5c6bc0;
-            --navbar-inactive: #aaaaaa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            transition: all 0.3s ease;
-            padding-bottom: 70px; /* Spazio per la navbar */
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px 0;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .theme-toggle {
-            position: absolute;
-            right: 10px;
-            top: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-
-        .welcome-message {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .cta-button {
-            display: block;
-            width: 80%;
-            margin: 30px auto;
-            padding: 15px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px var(--shadow-color);
-        }
-
-        .services-section, .promo-section {
-            margin-top: 30px;
-        }
-
-        h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .service-card, .promo-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px var(--shadow-color);
-        }
-
-        .service-card h3, .promo-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .service-card p, .promo-card p {
-            margin-bottom: 10px;
-        }
-
-        .service-price {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .promo-expiry {
-            font-size: 0.9em;
-            color: var(--secondary-color);
-            font-style: italic;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--navbar-bg);
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            box-shadow: 0 -2px 10px var(--shadow-color);
-            z-index: 1000;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--navbar-inactive);
-            font-size: 12px;
-        }
-
-        .nav-item.active {
-            color: var(--navbar-active);
-        }
-
-        .nav-icon {
-            font-size: 24px;
-            margin-bottom: 2px;
-        }
-
-        /* Sezione Appuntamenti Recenti */
-        .recent-appointments {
-            margin-top: 30px;
-        }
-
-        .appointment-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px var(--shadow-color);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .appointment-date {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .appointment-service {
-            margin: 5px 0;
-        }
-
-        .appointment-stylist {
-            font-style: italic;
-            font-size: 0.9em;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                data-theme: "dark";
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="logo">BeautyStyle</div>
             <button class="theme-toggle" id="themeToggle">🌓</button>
         </header>
-
         <div class="welcome-message">
             <h1>Benvenuto su BeautyStyle</h1>
             <p>La tua app per prenotare il tuo prossimo taglio di capelli</p>
         </div>
-
         <a href="#" class="cta-button">PRENOTA ORA</a>
-
         <div class="recent-appointments">
             <h2>I tuoi prossimi appuntamenti</h2>
             <div class="appointment-card">
@@ -231,7 +31,6 @@ session_start();
                 <p class="appointment-stylist">con Paolo Rossi</p>
             </div>
         </div>
-
         <div class="services-section">
             <h2>Servizi Popolari</h2>
             <div class="service-card">
@@ -285,23 +84,6 @@ session_start();
         </a>
     </nav>
 
-    <script>
-        // Funzione per cambiare tema senza localStorage
-        const themeToggle = document.getElementById('themeToggle');
-        
-        // Imposta tema predefinito basato sulle preferenze del sistema
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.setAttribute('data-theme', 'dark');
-        }
-        
-        // Toggle del tema senza localStorage
-        themeToggle.addEventListener('click', () => {
-            if (document.body.getAttribute('data-theme') === 'dark') {
-                document.body.removeAttribute('data-theme');
-            } else {
-                document.body.setAttribute('data-theme', 'dark');
-            }
-        });
-    </script>
 </body>
+
 </html>
