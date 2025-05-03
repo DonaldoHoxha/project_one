@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="it">
-
+<?php include 'barra-navigazione.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,24 +65,6 @@ session_start();
         </div>
     </div>
 
-    <nav class="navbar">
-        <a href="#" class="nav-item active">
-            <div class="nav-icon">🏠</div>
-            <span>Home</span>
-        </a>
-        <a href="#" class="nav-item">
-            <div class="nav-icon">📅</div>
-            <span>Appuntamenti</span>
-        </a>
-        <a href="#" class="nav-item">
-            <div class="nav-icon">ℹ️</div>
-            <span>Informazioni</span>
-        </a>
-        <a href="#" class="nav-item">
-            <div class="nav-icon">⚙️</div>
-            <span>Impostazioni</span>
-        </a>
-    </nav>
 
 </body>
 
