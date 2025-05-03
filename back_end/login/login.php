@@ -15,6 +15,18 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         echo $user['username'];
         if (password_verify($password, $user['password'])) {
             echo $user['username'];
+            session_regenerate_id(true);
+            if (isset($_POST['remember'])) {
+                // Set secure cookie (BEFORE ANY OUTPUT)
+                $cookie_options = [
+                    'expires'  => time() + 86400 * 30,
+                    'path'     => '/',
+                    'secure'   => true,    // Requires HTTPS
+                    'httponly' => true,
+                    'samesite' => 'Strict'
+                ];
+                setcookie("user", $user['username'], $cookie_options);
+            }
             $_SESSION['username'] = $username;
             header("Location: ../../front_end/index.php");
         } else {
