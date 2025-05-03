@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeautyStyle - Prenotazioni</title>
+    <title>AmiManera - Prenotazioni</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -15,12 +15,12 @@ session_start();
 <body>
     <div class="container">
         <header>
-            <div class="logo">BeautyStyle</div>
+            <div class="logo">A Mi Manera</div>
             <button class="theme-toggle" id="themeToggle">🌓</button>
         </header>
         <div class="welcome-message">
-            <h1>Benvenuto su BeautyStyle</h1>
-            <p>La tua app per prenotare il tuo prossimo taglio di capelli</p>
+            <h1>Benvenuto su AmiManera</h1>
+            <p>La migliore app per prenotare il tuo prossimo haircut</p>
         </div>
         <a href="#" class="cta-button">PRENOTA ORA</a>
         <div class="recent-appointments">
@@ -28,11 +28,11 @@ session_start();
             <div class="appointment-card">
                 <p class="appointment-date">10 Maggio 2025, 14:30</p>
                 <p class="appointment-service">Taglio di capelli e piega</p>
-                <p class="appointment-stylist">con Paolo Rossi</p>
+                <p class="appointment-stylist">con X X</p>
             </div>
         </div>
         <div class="services-section">
-            <h2>Servizi Popolari</h2>
+            <h2>Servizi più richiesti</h2>
             <div class="service-card">
                 <h3>Taglio di capelli</h3>
                 <p>Taglio professionale per rinnovare il tuo look</p>
