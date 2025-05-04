@@ -1,7 +1,7 @@
 <?php
 ?>
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="it">
 <link rel="stylesheet" href="style.css">
 <div class="footer-navbar" name="barra-navigazione">
@@ -12,7 +12,7 @@
             </div>
             <span>Home</span>
         </a>
-        <a href="appuntamenti.php" class="footer-nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'appuntamenti.php') ? 'active' : ''; ?>">
+        <a href="login/login.php" class="footer-nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'appuntamenti.php') ? 'active' : ''; ?>">
             <div class="footer-nav-icon">
                 <i class="fas fa-calendar-alt"></i>
             </div>

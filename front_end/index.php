@@ -35,7 +35,7 @@ session_start();
         if (isset($_SESSION['username'])) {
             echo "<a href='mostra_personale.php' class='cta-button'>PRENOTA ORA</a>";
         } else {
-            echo "<a href='login/login.html' class='cta-button'>PRENOTA ORA</a>";
+            echo "<a href='login/login.php' class='cta-button'>PRENOTA ORA</a>";
         }
         ?>
 
@@ -52,7 +52,7 @@ session_start();
             echo "<a href='../back_end/logout/logout.php'><button class='button'>LOGOUT</button></a>";
         } else {
             echo "<a href='login/registration.php'><button class='button'>REGISTRATI</button></a>";
-            echo "<a href='login/login.html'><button class='button'>ACCEDI</button></a>";
+            echo "<a href='login/login.php'><button class='button'>ACCEDI</button></a>";
         }
         ?>
         <div class="services-section">

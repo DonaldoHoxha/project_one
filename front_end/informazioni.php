@@ -1,9 +1,11 @@
-
-
-<?php include 'barra-navigazione.php'; ?>
+<?php
+session_start();
+include 'barra-navigazione.php';
+?>
 
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +14,7 @@
     <link rel="stylesheet" href="info-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header class="info-header">
         <nav>
@@ -19,9 +22,15 @@
                 <h1>Il Nostro Salone</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Accedi</a></li>
-                <li><a href="register.html">Registrati</a></li>
+                <li><a href="index.php">Home</a></li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='../back_end/logout/logout.php'>Logout</a></li>";
+                } else {
+                    echo "<li><a href='login/login.php'>Accedi</a></li>";
+                    echo "<li><a href='login/registration.php'>Registrati</a></li>";
+                }
+                ?>
                 <li><a href="info.html" class="active">Informazioni</a></li>
             </ul>
             <div class="hamburger">
@@ -102,7 +111,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const today = new Date().getDay(); // 0 è Domenica, 1 è Lunedì, ecc.
             const days = document.querySelectorAll('.day');
-            
+
             days.forEach(day => {
                 if (parseInt(day.dataset.day) === today) {
                     day.classList.add('current-day');
@@ -112,14 +121,14 @@
             // Menu hamburger per dispositivi mobili
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-            
+
             if (hamburger) {
                 hamburger.addEventListener('click', () => {
                     navLinks.classList.toggle('active');
                     hamburger.classList.toggle('active');
                 });
             }
-            
+
             // Animazioni di entrata per le sezioni
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -127,12 +136,15 @@
                         entry.target.classList.add('animate');
                     }
                 });
-            }, { threshold: 0.1 });
-            
+            }, {
+                threshold: 0.1
+            });
+
             document.querySelectorAll('.info-card').forEach(card => {
                 observer.observe(card);
             });
         });
     </script>
 </body>
+
 </html>

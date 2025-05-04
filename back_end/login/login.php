@@ -30,11 +30,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['username'] = $username;
             header("Location: ../../front_end/index.php");
         } else {
-            header("Location: ../../front_end/login/login.html?password errata");
+            header("Location: ../../front_end/login/login.php?password errata");
         }
     } else {
-        header("Location: ../../front_end/login/login.html?username errato");
+        header("Location: ../../front_end/login/login.php?username errato");
     }
 } else {
-    header("Location: ../../front_end/login/login.html?campi mancanti");
+    header("Location: ../../front_end/login/login.php?campi mancanti");
 }
