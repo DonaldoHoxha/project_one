@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Mi Manera Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Space for your existing PHP buttons -->
+            <div class="top-buttons">
+                <button class="nav-button">Accedi</button>
+                <button class="nav-button">Profilo</button>
+            </div>
+
+            <div class="header-content">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBmaWxsPSIjZDRhZjM3Ij48cGF0aCBkPSJNMTI1IDAgQzU2IDAgMCA1NiAwIDEyNSBDMCAxOTQgNTYgMjUwIDEyNSAyNTAgQzE5NCAyNTAgMjUwIDE5NCAyNTAgMTI1IEMyNTAgNTYgMTk0IDAgMTI1IDBaTTE5NSA4MCBMMTg1IDg1IEMxODUgODUgMTgwIDc1IDE2NSA3NSBDMTU1IDc1IDE0NSA4NSAxNDUgMTAwIEMxNDUgMTE1IDE1NSAxMjUgMTY1IDEyNSBDMTc3IDEyNSAxODUgMTE1IDE4NSAxMTUgTDE5NSAxMjAgQzE5NSAxMjAgMTgzIDEzNSAxNjUgMTM1IEMxNDUgMTM1IDEzMCAxMjAgMTMwIDEwMCBDMTMwIDgwIDE0NSA2NSAxNjUgNjUgQzE4MyA2NSAxOTUgODAgMTk1IDgwWk0xMTAgMTY1IEwxMTAgMTM1IEw5MCAxMzUgTDkwIDY1IEwxMTAgNjUgTDExMCAxMjUgTDEzNSAxMjUgTDEzNSAxMDAgTDE1NSAxMDAgTDE1NSAxMjUgTDE0NSAxMjUgTDE0NSAxMzUgTDExNSAxMzUgTDExNSAxNjUgTDExMCAxNjVaTTgwIDY1IEw5MCA2NSBMOTY1IDExNSBMOTAgNjVaTTgwIDY1IEw2NSA2NSBMITY1IDEzNSBMODAgMTM1IEw4MCA2NVoiLz48cGF0aCBkPSJNNTUgNzUgTDU1IDE0MCBMNDM1IDk1IEw0MzUgMTIwIEw1NSAxMzUgTDU1IDE0MFpNNTUgNzUgTDQ1IDc1IEwxNzUgMTIwIEw1NSA3NVoiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjMTIxMjEyIi8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iNzAiIHI9IjgiIGZpbGw9IiMxMjEyMTIiLz48L3N2Zz4="
+                    alt="A Mi Manera Logo" class="logo">
+                <h1 class="brand-title">A MI MANERA BARBERSHOP</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <button class="cta-button">PRENOTA ORA</button>
+
+            <!-- Services Section -->
+            <section>
+                <h2 class="section-title">I Nostri Tagli</h2>
+
+                <div class="slider-container">
+                    <div class="slider" id="services-slider">
+                        <div class="slide">
+                            <img src="/api/placeholder/280/200" alt="Taglio Classico" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Taglio Classico</h3>
+                                <p class="slide-price">€25</p>
+                                <p class="slide-description">Un taglio tradizionale con finiture di precisione e cura
+                                    dei dettagli.</p>
+                                <button class="book-btn">Prenota</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/200" alt="Barba e Baffi" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Barba e Baffi</h3>
+                                <p class="slide-price">€18</p>
+                                <p class="slide-description">Modellatura e rifinitura di barba e baffi con prodotti
+                                    premium.</p>
+                                <button class="book-btn">Prenota</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/200" alt="Fade Moderno" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Fade Moderno</h3>
+                                <p class="slide-price">€30</p>
+                                <p class="slide-description">Sfumatura graduale con transizione perfetta e stile
+                                    contemporaneo.</p>
+                                <button class="book-btn">Prenota</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/200" alt="Pacchetto Completo" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Pacchetto Completo</h3>
+                                <p class="slide-price">€45</p>
+                                <p class="slide-description">Taglio di capelli, barba e trattamento viso con prodotti di
+                                    qualità.</p>
+                                <button class="book-btn">Prenota</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-nav">
+                        <button class="slider-btn" id="prev-service">←</button>
+                        <button class="slider-btn" id="next-service">→</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Most Requested Option -->
+            <section class="most-requested">
+                <span class="most-requested-badge">Opzione più richiesta</span>
+                <div class="most-requested-content">
+                    <img src="/api/placeholder/120/120" alt="Pacchetto VIP" class="most-requested-img">
+                    <div class="most-requested-info">
+                        <h3>Pacchetto VIP Gentleman</h3>
+                        <p>Esperienza premium che include taglio di capelli personalizzato, trattamento barba con panno
+                            caldo, massaggio viso e consulenza sui prodotti migliori per il tuo stile.</p>
+                        <p class="slide-price">€55</p>
+                        <button class="book-btn">Prenota Ora</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Barbers Section -->
+            <section>
+                <h2 class="section-title">I Nostri Barbieri</h2>
+
+                <div class="slider-container">
+                    <div class="slider" id="barbers-slider">
+                        <div class="slide">
+                            <img src="/api/placeholder/280/280" alt="Marco" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Marco</h3>
+                                <p class="barber-specialty">Specialista in Fade e Tagli Moderni</p>
+                                <div class="barber-rating">★★★★★</div>
+                                <button class="book-btn">Prenota con Marco</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/280" alt="Luca" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Luca</h3>
+                                <p class="barber-specialty">Maestro della Barba</p>
+                                <div class="barber-rating">★★★★☆</div>
+                                <button class="book-btn">Prenota con Luca</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/280" alt="Giulia" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Giulia</h3>
+                                <p class="barber-specialty">Esperta in Tagli Classici</p>
+                                <div class="barber-rating">★★★★★</div>
+                                <button class="book-btn">Prenota con Giulia</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img src="/api/placeholder/280/280" alt="Antonio" class="slide-img">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Antonio</h3>
+                                <p class="barber-specialty">Fondatore e Master Barber</p>
+                                <div class="barber-rating">★★★★★</div>
+                                <button class="book-btn">Prenota con Antonio</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-nav">
+                        <button class="slider-btn" id="prev-barber">←</button>
+                        <button class="slider-btn" id="next-barber">→</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBmaWxsPSIjZDRhZjM3Ij48cGF0aCBkPSJNMTI1IDAgQzU2IDAgMCA1NiAwIDEyNSBDMCAxOTQgNTYgMjUwIDEyNSAyNTAgQzE5NCAyNTAgMjUwIDE5NCAyNTAgMTI1IEMyNTAgNTYgMTk0IDAgMTI1IDBaTTE5NSA4MCBMMTg1IDg1IEMxODUgODUgMTgwIDc1IDE2NSA3NSBDMTU1IDc1IDE0NSA4NSAxNDUgMTAwIEMxNDUgMTE1IDE1NSAxMjUgMTY1IDEyNSBDMTc3IDEyNSAxODUgMTE1IDE4NSAxMTUgTDE5NSAxMjAgQzE5NSAxMjAgMTgzIDEzNSAxNjUgMTM1IEMxNDUgMTM1IDEzMCAxMjAgMTMwIDEwMCBDMTMwIDgwIDE0NSA2NSAxNjUgNjUgQzE4MyA2NSAxOTUgODAgMTk1IDgwWk0xMTAgMTY1IEwxMTAgMTM1IEw5MCAxMzUgTDkwIDY1IEwxMTAgNjUgTDExMCAxMjUgTDEzNSAxMjUgTDEzNSAxMDAgTDE1NSAxMDAgTDE1NSAxMjUgTDE0NSAxMjUgTDE0NSAxMzUgTDExNSAxMzUgTDExNSAxNjUgTDExMCAxNjVaTTgwIDY1IEw5MCA2NSBMOTY1IDExNSBMOTAgNjVaTTgwIDY1IEw2NSA2NSBMITY1IDEzNSBMODAgMTM1IEw4MCA2NVoiLz48cGF0aCBkPSJNNTUgNzUgTDU1IDE0MCBMNDM1IDk1IEw0MzUgMTIwIEw1NSAxMzUgTDU1IDE0MFpNNTUgNzUgTDQ1IDc1IEwxNzUgMTIwIEw1NSA3NVoiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI4IiBmaWxsPSIjMTIxMjEyIi8+PGNpcmNsZSBjeD0iMTgwIiBjeT0iNzAiIHI9IjgiIGZpbGw9IiMxMjEyMTIiLz48L3N2Zz4="
+                        alt="A Mi Manera Logo" class="footer-logo">
+                </div>
+
+                <div class="footer-links">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="#">Chi Siamo</a></li>
+                        <li><a href="#">Servizi</a></li>
+                        <li><a href="#">Prodotti</a></li>
+                        <li><a href="#">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li>Via Roma 123, Milano</li>
+                        <li>info@amimanera.it</li>
+                        <li>+39 02 1234567</li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Orari</h4>
+                    <ul>
+                        <li>Lun-Ven: 9:00 - 19:00</li>
+                        <li>Sabato: 9:00 - 18:00</li>
+                        <li>Domenica: Chiuso</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025 A Mi Manera Barbershop - Tutti i diritti riservati
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
