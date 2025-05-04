@@ -7,6 +7,9 @@ $barbiere_id = isset($_GET['id']) && is_numeric($_GET['id']) ? intval($_GET['id'
 if ($barbiere_id <= 0) {
     die("ID barbiere non valido o mancante. L'URL dovrebbe essere: personale.php?id=1");
 }
+
+// Imposta la data minima a oggi
+$oggi = date('Y-m-d');
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +42,7 @@ if ($barbiere_id <= 0) {
 
     <form id="dateForm">
         <label for="data">Seleziona data:</label>
-        <input type="date" id="data" name="data" required>
+        <input type="date" id="data" name="data" min="<?php echo $oggi; ?>" value="<?php echo $oggi; ?>" required>
         <input type="hidden" name="id_barbiere" value="<?php echo $barbiere_id; ?>">
         <button type="button" onclick="caricaOrariDisponibili()">Cerca</button>
     </form>
@@ -49,11 +52,15 @@ if ($barbiere_id <= 0) {
     </div>
 
     <script>
+        // Imposta la data minima a oggi anche con JavaScript per browser più vecchi
+        const oggi = new Date().toISOString().split('T')[0];
+        document.getElementById('data').setAttribute('min', oggi);
+
         function caricaOrariDisponibili() {
             const data = document.getElementById('data').value;
             const idBarbiere = <?php echo $barbiere_id; ?>;
 
-            fetch(`get_orari_disponibili.php?id_barbiere=${idBarbiere}&data=${data}`)
+            fetch(`../back_end/get_orari_disponibili.php?id_barbiere=${idBarbiere}&data=${data}`)
                 .then(response => response.text())
                 .then(html => {
                     document.getElementById('orari-disponibili').innerHTML = html;
@@ -65,7 +72,7 @@ if ($barbiere_id <= 0) {
                 });
         }
 
-        // Chiamata iniziale e al cambio data
+        // Chiamata iniziale con la data di oggi come default
         window.onload = caricaOrariDisponibili;
         document.getElementById('data').addEventListener('change', caricaOrariDisponibili);
     </script>
