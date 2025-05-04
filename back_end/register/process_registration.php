@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("db_conn.php");
+include_once("../db_conn.php");
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirmed_password']) && isset($_POST['email'])) {
     $username = trim($_POST['username']);
@@ -10,12 +10,12 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf
 
     // Validazione
     if (empty($username) || empty($password) || empty($confirmed_password) || empty($email)) {
-        header("Location: ../front_end/registration.php?error=missing_fields");
+        header("Location: ../front_end/login/registration.php?error=missing_fields");
         exit();
     }
 
     if ($password !== $confirmed_password) {
-        header("Location: ../front_end/registration.php?error=password_mismatch");
+        header("Location: ../../front_end/login/registration.php?error=password_mismatch");
         exit();
     }
 
@@ -26,7 +26,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf
     $result = $query->get_result();
 
     if ($result->num_rows > 0) {
-        header("Location: ../front_end/registration.php?error=username_exists");
+        header("Location: ../../front_end/login/registration.php?error=username_exists");
         exit();
     }
 
@@ -38,13 +38,13 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf
     if ($query->execute()) {
         $_SESSION['user_id'] = $conn->insert_id;
         $_SESSION['username'] = $username;
-        header("Location: ../front_end/index.php");
+        header("Location: ../../front_end/index.php");
         exit();
     } else {
-        header("Location: ../front_end/registration.php?error=database_error");
+        header("Location: ../../front_end/login/registration.php?error=database_error");
         exit();
     }
 } else {
-    header("Location: ../front_end/registration.php?error=missing_fields");
+    header("Location: ../../front_end/login/registration.php?error=missing_fields");
     exit();
 }

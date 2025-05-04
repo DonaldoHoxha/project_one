@@ -60,7 +60,7 @@ if (isset($_GET['error'])) {
                     <input type="password" name="confirmed_password" placeholder="Conferma Password" required />
                 </div>
                 <button type="submit">Registrati</button>
-                <p class="mobile-text">Hai già un account? <a href="login.php">Accedi</a></p>
+                <p class="mobile-text">Hai già un account? <a href="login.html">Accedi</a></p>
             </form>
         </div>
         <div class="overlay-container">
@@ -68,7 +68,7 @@ if (isset($_GET['error'])) {
                 <div class="overlay-panel overlay-right">
                     <h1>Bentornato!</h1>
                     <p>Se hai già un account, accedi per continuare il tuo viaggio con noi</p>
-                    <button class="ghost" id="signIn" onclick="window.location.href='login.php'">Accedi</button>
+                    <button class="ghost" id="signIn" onclick="window.location.href='login.html'">Accedi</button>
                 </div>
             </div>
         </div>

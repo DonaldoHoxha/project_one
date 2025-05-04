@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="form-container sign-in-container">
-            <form action="#" method="POST">
+            <form action="../../back_end/login/login.php" method="POST">
                 <h1>Accedi</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -21,8 +21,8 @@
                 </div>
                 <span>o usa il tuo account</span>
                 <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email" required />
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="username" required />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -30,7 +30,7 @@
                 </div>
                 <a href="#" class="forgot">Password dimenticata?</a>
                 <button type="submit">Accedi</button>
-                <p class="mobile-text">Non hai un account? <a href="registration.html">Registrati</a></p>
+                <p class="mobile-text">Non hai un account? <a href="registration.php">Registrati</a></p>
             </form>
         </div>
         <div class="overlay-container">
