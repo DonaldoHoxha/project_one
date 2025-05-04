@@ -2,6 +2,15 @@
 session_start();
 include_once '../back_end/db_conn.php';
 
+include_once("../back_end/auto_login.php");
+
+// Try auto login if session is not set
+if (!isset($_SESSION['user_id'])) {
+    autoLogin($conn);
+}
+
+include 'barra-navigazione.php';
+
 // Verifica se l'ID barbiere è valido
 $barbiere_id = isset($_GET['id']) && is_numeric($_GET['id']) ? intval($_GET['id']) : 0;
 if ($barbiere_id <= 0) {

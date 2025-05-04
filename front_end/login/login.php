@@ -31,6 +31,10 @@ session_start();
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required />
                 </div>
+                <div class="remember-me">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label for="remember">Ricordami</label>
+                </div>
                 <a href="#" class="forgot">Password dimenticata?</a>
                 <button type="submit">Accedi</button>
                 <p class="mobile-text">Non hai un account? <a href="registration.php">Registrati</a></p>

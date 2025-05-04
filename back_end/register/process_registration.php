@@ -10,7 +10,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf
 
     // Validazione
     if (empty($username) || empty($password) || empty($confirmed_password) || empty($email)) {
-        header("Location: ../front_end/login/registration.php?error=missing_fields");
+        header("Location: ../../front_end/login/registration.php?error=missing_fields");
         exit();
     }
 
@@ -38,6 +38,36 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conf
     if ($query->execute()) {
         $_SESSION['user_id'] = $conn->insert_id;
         $_SESSION['username'] = $username;
+
+        // Handle "Remember Me" checkbox for registration
+        if (isset($_POST['remember'])) {
+            $user_id = $conn->insert_id;
+
+            // Create a secure token
+            $selector = bin2hex(random_bytes(8));
+            $token = bin2hex(random_bytes(32));
+            $hashed_token = password_hash($token, PASSWORD_DEFAULT);
+
+            // Set expiration date - 30 days
+            $expires = time() + 86400 * 30;
+
+            // Store token in database
+            $insert_query = $conn->prepare("INSERT INTO auth_tokens (user_id, selector, token, expires) VALUES (?, ?, ?, ?)");
+            $insert_query->bind_param("issi", $user_id, $selector, $hashed_token, $expires);
+            $insert_query->execute();
+
+            // Set secure cookie
+            $cookie_value = $selector . ':' . $token;
+            $cookie_options = [
+                'expires'  => $expires,
+                'path'     => '/',
+                'secure'   => true,    // Requires HTTPS
+                'httponly' => true,
+                'samesite' => 'Strict'
+            ];
+            setcookie("remember_me", $cookie_value, $cookie_options);
+        }
+
         header("Location: ../../front_end/index.php");
         exit();
     } else {

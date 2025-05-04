@@ -53,11 +53,11 @@ if (isset($_GET['error'])) {
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required />
-                </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
                     <input type="password" name="confirmed_password" placeholder="Conferma Password" required />
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label for="remember">Ricordami</label>
                 </div>
                 <button type="submit">Registrati</button>
                 <p class="mobile-text">Hai già un account? <a href="login.php">Accedi</a></p>

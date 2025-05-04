@@ -1,5 +1,12 @@
 <?php
 session_start();
+include_once("../back_end/db_conn.php");
+include_once("../back_end/auto_login.php");
+
+// Try auto login if session is not set
+if (!isset($_SESSION['user_id'])) {
+    autoLogin($conn);
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
