@@ -12,12 +12,23 @@
             </div>
             <span>Home</span>
         </a>
-        <a href="login/login.php" class="footer-nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'appuntamenti.php') ? 'active' : ''; ?>">
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo '<a href="appuntamenti.php" class="footer-nav-item ' . ((basename($_SERVER['PHP_SELF']) == 'appuntamenti.php') ? 'active' : '') . '">
             <div class="footer-nav-icon">
                 <i class="fas fa-calendar-alt"></i>
             </div>
             <span>Appuntamenti</span>
-        </a>
+        </a>';
+        } else {
+            echo '<a href="login/login.php" class="footer-nav-item ' . ((basename($_SERVER['PHP_SELF']) == 'appuntamenti.php') ? 'active' : '') . '">
+            <div class="footer-nav-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <span>Appuntamenti</span>
+        </a>';
+        }
+        ?>
         <a href="informazioni.php" class="footer-nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'informazioni.php') ? 'active' : ''; ?>">
             <div class="footer-nav-icon">
                 <i class="fas fa-info-circle"></i>
@@ -32,6 +43,5 @@
         </a>
     </div>
 </div>
-
 <!-- Includi Font Awesome per le icone -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
