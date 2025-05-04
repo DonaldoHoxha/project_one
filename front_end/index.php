@@ -80,6 +80,9 @@ if (!isset($_SESSION['user_id'])) {
                 <p class="service-price">Da €50</p>
             </div>
         </div>
+        <button> home page 
+            <a href="home.html">
+        </button>
 
         <div class="promo-section">
             <h2>Promozioni</h2>
