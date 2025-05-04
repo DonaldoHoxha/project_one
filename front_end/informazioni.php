@@ -31,7 +31,7 @@ include 'barra-navigazione.php';
                     echo "<li><a href='login/registration.php'>Registrati</a></li>";
                 }
                 ?>
-                <li><a href="info.html" class="active">Informazioni</a></li>
+                <li><a href="informazioni.php" class="active">Informazioni</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
